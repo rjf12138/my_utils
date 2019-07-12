@@ -1,0 +1,8 @@
+{
+    "type_bool_false":false,
+    "type_bool_true":true,
+    "type_double":32.1234,
+    "type_int":32,
+    "type_short":65535,
+    "type_string":"string"
+}

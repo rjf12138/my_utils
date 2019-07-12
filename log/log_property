@@ -1,0 +1,45 @@
+#rootLogger configure_1
+#log4j.rootLogger=DEBUG, log_test_1, log_test_3
+log4j.rootLogger=DEBUG
+
+# file
+log4j.logger.log_1=DEBUG,log_test_1
+log4j.additivity.log_1=false
+
+# file
+log4j.logger.log_2=DEBUG,log_test_2
+log4j.additivity.log_2=false
+
+# console
+log4j.logger.log_3=DEBUG, log_test_3
+log4j.additivity.log_3=false         # 设置为 true 并且使用 rootLogger configure_1, log_3 会输出一次， rootLogger 会输出一次
+
+log4j.additivity.org.apache=false
+
+#**************************
+#设置日志文件信息，比如大小，时间格式
+#**************************
+log4j.appender.log_test_1=org.apache.log4j.RollingFileAppender
+log4j.appender.log_test_1.File=./log/log_test_1.log
+log4j.appender.log_test_1.Append=fasle
+log4j.appender.log_test_1.MaxFileSize=10MB
+log4j.appender.log_test_1.MaxBackupIndex=10
+log4j.appender.log_test_1.DatePattern=yyyy-MM-dd
+log4j.appender.log_test_1.layout=org.apache.log4j.PatternLayout
+log4j.appender.log_test_1.layout.ConversionPattern=[%d][%t][%-5p]%m%n
+
+log4j.appender.log_test_2=org.apache.log4j.RollingFileAppender
+log4j.appender.log_test_2.File=./log/log_test_2.log
+log4j.appender.log_test_2.Append=fasle
+log4j.appender.log_test_2.MaxFileSize=10MB
+log4j.appender.log_test_2.MaxBackupIndex=10
+log4j.appender.log_test_2.DatePattern=yyyy-MM-dd
+log4j.appender.log_test_2.layout=org.apache.log4j.PatternLayout
+log4j.appender.log_test_2.layout.ConversionPattern=[%d][%-5p]%m%n
+
+log4j.appender.log_test_3=org.apache.log4j.ConsoleAppender
+log4j.appender.log_test_3.Threshold=DEBUG
+log4j.appender.log_test_3.ImmediateFlush=true
+log4j.appender.log_test_3.Target=System.err
+log4j.appender.log_test_3.layout=org.apache.log4j.PatternLayout
+log4j.appender.log_test_3.layout.ConversionPattern=[%d][%t][%-5p]%m%n

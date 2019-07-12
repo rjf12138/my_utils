@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<!--自定义类型在此定义-->
+    <group>
+        <arg type="string" name="account"/>
+        <arg type="string" name="name"/>
+        <arg type="string" name="manager_account"/>
+        <arg type="string" name="introduction"/>
+        <arg type="binary" name="head_portrait"/>
+    </group>
+
+    <group_member>
+        <arg type="string" name="group_account"/>
+        <arg type="string" name="member_account"/>
+    </group_member>
+
+    <next_account>
+        <arg type="string" name="new_user_account"/>
+        <arg type="string" name="new_user_group"/>
+    </next_account>
+
+    <user>
+        <arg type="string" name="account"/>
+        <arg type="string" name="name"/>
+        <arg type="string" name="password"/>
+        <arg type="string" name="signature"/>
+        <arg type="string" name="mail"/>
+        <arg type="string" name="birthday"/>
+        <arg type="string" name="head_portrait"/>
+    </user>
+
+    <user_friend>
+        <arg type="string" name="user_account"/>
+        <arg type="string" name="friend_account"/>
+    </user_friend>
+
+    <user_joined_group>
+        <arg type="string" name="user_account"/>
+        <arg type="string" name="group_account"/>
+    </user_joined_group>
+
+    <user_managed_group>
+        <arg type="string" name="manager_account"/>
+        <arg type="string" name="group_account"/>
+    </user_managed_group>
+
+    <data_type>
+        <fint_t>12</fint_t>
+        <ffloat_t>12.4</ffloat_t>
+        <fstring_t>hello</fstring_t>
+    </data_type>
+</root>
